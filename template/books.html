@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <style>
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.3rem;
+            background-color: rgb(248, 218, 178);
+        }
+
+
+        
+        h1 {
+            text-align: center;
+            font-weight: 900;
+           
+            margin-top:0;
+        }
+
+        p {
+            font-weight: 400;
+        }
+
+
+        .header_section {
+            background-color: maroon;
+            color:#fff;
+            padding:5em;
+            margin-bottom: 2em;
+        }
+
+        .book_card {
+            display:flex;
+            flex-direction: column;
+            width:100%;
+            padding:2em;
+            gap:2em;
+            border:1px black solid;
+        }
+
+        .book_img {
+            background-color: beige;
+        }
+
+
+        .landing {
+            text-align: center;
+            padding:3em;
+            border:2px black solid;
+        }
+        .main_section {
+            display:flex;
+            flex-direction: row;
+            width:100%;
+            flex-wrap: wrap;
+            gap:1em;
+             
+        }
+
+        .main_section > * {
+            width:30%;
+        }
+        .book_btn {
+            
+            padding:1.2em 2em;
+            border-radius:1.125em;
+            background-color:rgb(54, 236, 54);
+            border:1px solid black;
+            max-width: fit-content;
+
+        }
+        a {
+            text-decoration: None;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 700;
+            color:black;
+        }
+        .foot {
+             
+            display:flex;
+            flex-direction: column;
+        }
+        
+        footer {
+            margin-top:5em;
+        }
+        input {
+            padding:0 10em 10em 0;
+            width:80%;
+        }
+        .small {
+            width:max-content;
+        }
+        .container {
+            width:80%;
+            margin:0 auto;
+        }
+        .lower{
+            margin-top: 5em;
+            gap:1em;
+        }
+        .lower > * {
+            margin-top: 1em;
+        }
+    </style>
+ </head>
+<body>
+    <header class="header_section">
+        
+        <div class="container">
+            <h1>We've got a whole catalogue to wet your reading appetite</h1>
+            <p>If you didn't find a book you were looking for, drop the title in the comments</p>
+        </div></header>
+    <div class="main_section container">
+
+        {{range .}}
+        <div class="book_card">
+            <a href="/api/book/?id={{.ID}}"> 
+                <div class="book_img">
+                    <img src="" alt="book">
+                </div>
+            
+            </a>
+                <div>
+                    <h3 class="book_title">Title: {{.Title}}</h3>
+                    
+                    <p class="book_isbn">Isbn: {{.Isbn}}</p>
+                </div>
+            
+        </div>
+        {{end}}
+    </div>
+     
+
+     <footer class="container lower">
+        <button class="book_btn"><a href="/api/create">Add book</a></button>
+   
+        
+        <div class="foot">
+            <input type="text" placeholder="comment section">
+            <button class="book_btn small" type="submit"><a href="#">Post Comment</a></button>
+        </div>
+    </footer>
+      
+    
+
+    
+</body>
+</html>

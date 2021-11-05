@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+    <style>
+        * {
+            margin:0;
+            box-sizing: border-box;
+        }
+        .heading {
+            margin-bottom: 2em;
+        }
+        .container {
+            width:80%;
+            margin:0 auto;
+        }
+
+        .main {
+            width:30%;
+            margin:5em auto 0  auto;
+            border:2px solid black;
+            padding:2em;
+        }
+        .input1 {
+            margin-bottom: 1em;
+            padding:1em 0 1em 1em;
+           
+        }
+        .conditional {
+            text-align: center;
+              
+        }
+        .btn {
+            margin-top:2em;
+            padding:0.5em 2em;
+            font-weight: 600;
+            background-color: green;
+            border:1px black solid;
+            border-radius: 5px;
+        }
+        .box {
+            width:max-content;
+       
+        }
+
+        .box > * {
+            width:100%;
+            gap:1em;
+        }
+        a {
+            padding:3em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h2 class="heading">Update Book</h2>
+        <form class="box" action="/api/updateresult/?id={{.ID}}" method="post">
+            <label class="label1" for="title">Title:</label>
+            <input class="input1" type="text" id="title" name="titleTitle" value="{{.Title}}"><br>
+            <label class="label1" for="isbn">Isbn:</label>
+            <input class="input1" type="text" id="isbn" name="isbnIsbn" value="{{.Isbn}}"><br>
+            <label class="label1" for="id">ID:</label>
+            <input class="input1" type="text" id="id" name="idId" value="{{.ID}}"><br>
+            <label class="label1" for="authorfn">Author FirstName:</label>
+            <input class="input1" type="text" id="authorfn" name="authorFn" value="{{.Author.Firstname}}"><br>
+            <label class="label1" for="authorln">Author LastName:</label>
+            <input class="input1" type="text" id="authorln" name="authorLn" value="{{.Author.Lastname}}"><br>
+        
+            <input class="input1" type="submit" value="Update Book">
+        
+        </form>
+    </div>
+    <br><br>
+
+     
+    <br>
+    <a href="/api/books">All Books</a>
+    
+</body>
+</html>
