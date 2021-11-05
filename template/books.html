@@ -22,20 +22,20 @@
         
         h1 {
             text-align: center;
-            font-weight: 900;
+            font-weight: 400;
            
             margin-top:0;
         }
 
         p {
-            font-weight: 400;
+            font-weight: 200;
         }
 
 
         .header_section {
             background-color: maroon;
             color:#fff;
-            padding:5em;
+            padding:1em;
             margin-bottom: 2em;
         }
 
@@ -60,16 +60,58 @@
         }
         .main_section {
             display:flex;
-            flex-direction: row;
+            flex-direction: column;
             width:100%;
             flex-wrap: wrap;
             gap:1em;
              
         }
+        .main_section > * {
+            width:100%;
+        }
+        @media (min-width:40em) {
 
+            h1 {
+            text-align: center;
+            font-weight: 900;
+           
+            margin-top:0;
+            }
+
+        p {
+            font-weight: 400;
+            }
+            .header_section {
+            background-color: maroon;
+            color:#fff;
+            padding:5em;
+            margin-bottom: 2em;
+        }
+            .main_section {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width:100%;             
+            gap:1em;
+             
+        }
         .main_section > * {
             width:30%;
         }
+        .container {
+            width:80%;
+            margin:0 auto;
+            padding:2em;
+        }
+        input {
+            padding:0 10em 10em 0;
+            width:80%;
+        }
+
+        }
+        
+
+        
         .book_btn {
             
             padding:1.2em 2em;
@@ -96,15 +138,16 @@
             margin-top:5em;
         }
         input {
-            padding:0 10em 10em 0;
-            width:80%;
+            padding:0 5em 5em 0;
+            width:60%;
         }
         .small {
             width:max-content;
         }
         .container {
-            width:80%;
+            width:90%;
             margin:0 auto;
+            padding:1em;
         }
         .lower{
             margin-top: 5em;
